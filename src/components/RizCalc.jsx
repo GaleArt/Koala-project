@@ -29,19 +29,16 @@ const RizCalc = () => {
 		if (voltageFull && resistPr && voltagePlus && voltageMinus) {
 			const rObs =
 				Number(voltageFull) / (Number(voltagePlus) + Number(voltageMinus));
-			const rPlus = Number(voltageFull) + Number(resistPr);
+			const rPlus =
+				(Number(voltageFull) - Number(voltagePlus)) / Number(voltageMinus);
 			const rMinus =
-				Number(voltageFull) / (Number(resistPr) + Number(resistPr));
+				(Number(voltageFull) - Number(voltageMinus)) / Number(voltagePlus);
 
-			/* rPlus = (resistancePlus - 1) * strToNum(resistPr);
-    rMinus = (resistanceMinus - 1) * strToNum(resistPr);
-    rObs = (resistanceAll - 1) * strToNum(resistPr); */
-
-			setTotalAll((rObs - 1) * resistPr);
-			setTotalPlus(Number(2));
-			setTotalMinus(Number(1));
+			setTotalAll((rObs - 1) * Number(resistPr));
+			setTotalPlus((rPlus - 1) * Number(resistPr));
+			setTotalMinus((rMinus - 1) * Number(resistPr));
 		}
-	});
+	}, [voltageFull, resistPr, voltagePlus, voltageMinus]);
 
 	return (
 		<form className='mx-auto grid max-w-6xl gap-y-5 lg:gap-x-8'>
@@ -57,9 +54,9 @@ const RizCalc = () => {
 					setVoltageMinus={setVoltageMinus}
 				/>
 
-				<p>{totalAll}</p>
-				<p>{totalPlus}</p>
-				<p>{totalMinus}</p>
+				<p>Rиз общая = {totalAll.toFixed(2)} кОм</p>
+				<p>Rиз на плюсе = {totalPlus.toFixed(2)} кОм</p>
+				<p>Rиз минусе = {totalMinus.toFixed(2)} кОм</p>
 				<button
 					type='submit'
 					className='mt-14 w-full rounded-md bg-cyan-200 px-3.5 py-2.5 text-lg font-semibold uppercase tracking-wide text-cyan-700 shadow-sm hover:bg-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
