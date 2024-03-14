@@ -14,8 +14,7 @@ const RizCalc = () => {
 	const [totalPlus, setTotalPlus] = useState(0);
 	const [totalMinus, setTotalMinus] = useState(0);
 
-	const handleResetTip = (e) => {
-		e.preventDefault();
+	const handleResetTip = () => {
 		setVoltageFull(0);
 		setResistPr(0);
 		setVoltagePlus(0);
@@ -33,10 +32,18 @@ const RizCalc = () => {
 				(Number(voltageFull) - Number(voltagePlus)) / Number(voltageMinus);
 			const rMinus =
 				(Number(voltageFull) - Number(voltageMinus)) / Number(voltagePlus);
+			/*	Небольшая проверка вывода (изоляция все-таки физическая величина)	*/
+			(rObs - 1) * Number(resistPr) < 0
+				? setTotalAll(0)
+				: setTotalAll((rObs - 1) * Number(resistPr));
 
-			setTotalAll((rObs - 1) * Number(resistPr));
-			setTotalPlus((rPlus - 1) * Number(resistPr));
-			setTotalMinus((rMinus - 1) * Number(resistPr));
+			(rPlus - 1) * Number(resistPr) < 0
+				? setTotalPlus(0)
+				: setTotalPlus((rPlus - 1) * Number(resistPr));
+
+			(rMinus - 1) * Number(resistPr) < 0
+				? setTotalMinus(0)
+				: setTotalMinus((rMinus - 1) * Number(resistPr));
 		}
 	}, [voltageFull, resistPr, voltagePlus, voltageMinus]);
 

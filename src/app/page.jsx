@@ -141,12 +141,6 @@ export default async function Home() {
 					<p>fgbfgb</p>
 					<p>tregrt</p>
 				</div>
-
-				{/* <div className='grid grid-cols-4 gap-3 px-3 mt-4'>
-					{tasks.map((task) => (
-						<TaskCard key={task.id} task={task} />
-					))}
-				</div> */}
 			</div>
 		</main>
 	);
