@@ -1,4 +1,4 @@
-import TaskCard from '@/components/TaskCard';
+import TaskCard from '@/components/InstrumentCard';
 import { prisma } from '@/libs/prisma';
 
 async function loadTasks() {

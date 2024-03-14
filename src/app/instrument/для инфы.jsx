@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react";
 
-const NewPage = ({params}) => {
+const NewInstrument = ({params}) => {
     const router = useRouter();
     const [values, setValues] = useState({
         title: '',
@@ -74,4 +74,4 @@ const NewPage = ({params}) => {
     )
 }
 
-export default NewPage
+export default NewInstrument;

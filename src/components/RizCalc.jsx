@@ -66,7 +66,7 @@ const RizCalc = () => {
 				<p>Rиз минусе = {totalMinus.toFixed(2)} кОм</p>
 				<button
 					type='submit'
-					className='mt-14 w-full rounded-md bg-cyan-200 px-3.5 py-2.5 text-lg font-semibold uppercase tracking-wide text-cyan-700 shadow-sm hover:bg-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
+					className='mt-4 w-full rounded-md bg-cyan-200 px-3.5 py-2.5 text-lg font-semibold uppercase tracking-wide text-cyan-700 shadow-sm hover:bg-cyan-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white'
 					onClick={(e) => handleResetTip()}
 				>
 					Перезагрузить
