@@ -1,3 +1,3 @@
-import NewPage from '@/app/instrument/page';
+import NewInstrument from '@/app/instrument/page';
 
-export default NewPage;
+export default NewInstrument;
