@@ -1,7 +1,11 @@
 -- CreateTable
-CREATE TABLE "Task" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "title" TEXT NOT NULL,
-    "description" TEXT,
-    "created_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE "Instrument" (
+	"id"	INTEGER NOT NULL,
+	"smena"	INTEGER NOT NULL,
+	"name"	TEXT NOT NULL,
+	"description"	TEXT,
+	"type"	TEXT,
+	"test"	DATETIME NOT NULL,
+	"next_test"	DATETIME,
+	PRIMARY KEY("id" AUTOINCREMENT)
 );

@@ -1,6 +1,10 @@
 import RizCalc from '@/components/RizCalc';
 import H2Leak from '@/components/H2Leak';
 
+export const metadata = {
+	title: 'Калькуляторы',
+};
+
 export default async function Calc() {
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-12 container mx-auto'>

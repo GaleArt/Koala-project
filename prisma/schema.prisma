@@ -10,19 +10,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Task {
-  id          Int @id @default(autoincrement())
-  title       String 
-  description String?
-  created_at  DateTime @default(now())
-}
-
-model Instruments {
+model Instrument {
   id          Int @id @default(autoincrement())
   smena       Int
   name        String
   description String?
-  type        String
+  type        String?
   test        DateTime
-  next_test   DateTime
+  next_test   DateTime?
 }

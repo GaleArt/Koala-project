@@ -1,12 +1,12 @@
-import TaskCard from '@/components/InstrumentCard';
+import InstrumentCard from '@/components/InstrumentCard';
 import { prisma } from '@/libs/prisma';
 
-async function loadTasks() {
-	return await prisma().task.findMany();
+async function loadInstruments() {
+	return await prisma().instrument.findMany();
 }
 
 export default async function Home() {
-	const tasks = await loadTasks();
+	const instruments = await loadInstruments();
 
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-3 container mx-auto'>
@@ -21,8 +21,8 @@ export default async function Home() {
 					<div className='w-1/12'>Дата след. исп.</div>
 					<div className='w-1/12'></div>
 				</div>
-				{tasks.map((task) => (
-					<TaskCard key={task.id} task={task} />
+				{instruments.map((instrument) => (
+					<InstrumentCard key={instrument.id} instrument={instrument} />
 				))}
 			</div>
 		</main>

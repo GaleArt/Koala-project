@@ -1,12 +1,5 @@
-import TaskCard from '@/components/InstrumentCard';
-import { prisma } from '@/libs/prisma';
-
-async function loadTasks() {
-	return await prisma().task.findMany();
-}
 
 export default async function Home() {
-	const tasks = await loadTasks();
 
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-12 container mx-auto'>
