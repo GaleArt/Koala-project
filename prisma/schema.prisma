@@ -1,21 +1,31 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
-model Instrument {
-  id          Int @id @default(autoincrement())
-  smena       Int
-  name        String
-  description String?
-  type        String?
-  test        DateTime
-  next_test   DateTime?
+model instruments {
+  id           Int    @id @default(autoincrement())
+  smena        Int
+  name         String
+  description  String
+  type         String
+  testedDate   String
+  nextTestDate String
+}
+
+model users {
+  id       Int    @id @default(autoincrement())
+  username String
+  login    String
+  pass     String
 }

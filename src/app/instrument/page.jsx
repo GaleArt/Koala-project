@@ -2,10 +2,10 @@ import InstrumentCard from '@/components/InstrumentCard';
 import { prisma } from '@/libs/prisma';
 
 async function loadInstruments() {
-	return await prisma().instrument.findMany();
+	return await prisma().instruments.findMany();
 }
 
-export default async function Home() {
+export default async function Instrument() {
 	const instruments = await loadInstruments();
 
 	return (
