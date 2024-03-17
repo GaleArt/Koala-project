@@ -13,7 +13,7 @@ const InstrumentCard = ({ instrument }) => {
 			<div className='w-1/12'>{instrument.nextTestDate}</div>
 			<div className='w-1/12'>
 				<button
-					class='text-slate-800 hover:text-blue-600 bg-white hover:bg-slate-100 border border-slate-200 rounded-lg font-medium mr-1 px-1 py-1 inline-flex space-x-1 items-center'
+					class='text-slate-800 bg-white hover:bg-lime-400 border border-slate-800 rounded-lg font-medium mr-1 px-1 py-1 inline-flex space-x-1 items-center'
 					onClick={() => router.push(`/instrument/${instruments.id}`)}
 				>
 					<span>
@@ -33,7 +33,7 @@ const InstrumentCard = ({ instrument }) => {
 						</svg>
 					</span>
 				</button>
-				<button class='text-slate-800 hover:text-blue-600 bg-white hover:bg-slate-100 border border-slate-200 rounded-lg font-medium px-1 py-1 inline-flex space-x-1 items-center'>
+				<button class='text-slate-800 bg-white hover:bg-red-400 border border-slate-800 rounded-lg font-medium px-1 py-1 inline-flex space-x-1 items-center'>
 					<span>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
