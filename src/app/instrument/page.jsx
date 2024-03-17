@@ -11,7 +11,7 @@ export default async function Instrument() {
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-3 container mx-auto'>
 			<div className='flex flex-col z-10 w-full items-center font-mono text-sm lg:flex'>
-				Тут будет фильтр
+				Тут будет фильтр и поиск :)
 				<div className='flex items-start w-full px-2 m-1 py-0.5 font-bold child:text-left bg-gray-300 rounded-lg'>
 					<div className='w-1/12'>№ Смены</div>
 					<div className='w-2/12'>Наименование</div>
