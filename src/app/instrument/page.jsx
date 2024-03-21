@@ -6,6 +6,10 @@ async function loadInstruments() {
 	return await prisma().instruments.findMany();
 }
 
+export const metadata = {
+	title: 'СИЗ и ТСБ',
+};
+
 export default async function Instrument() {
 	const instruments = await loadInstruments();
 
